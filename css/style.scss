@@ -1,0 +1,44 @@
+/*!
+ Theme Name:   COH - Virtue Child
+ Description:  Virtue Child Theme for the COH site
+ Author:       David Cavins
+ Template:     virtue
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Text Domain:  virtue-child-coh
+*/
+// Colors
+$arc-blue-1: #0a5981;
+$arc-blue-2: #4680a5;
+$arc-blue-3: #7ca7c5;
+$arc-blue-4: #b6cfe0;
+$arc-blue-5: #00496E;
+$arc-orange: #ef8a62;
+$arc-green: #93DE76;
+$arc-lt-violet: #9B96EC; 
+$arc-violet: #8481D2;
+
+
+// Reporting interface
+#cdt .cdt-chart {
+	max-width: 100%;
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.sidebar-footer-logos {
+	// padding-top: 2em;
+}
+
+// At 600 we can do an overlay.
+@media screen and (min-width:600px), print {
+	// Map interface
+	.cdt-fullwidth.map-room,
+	.cdt-fullwidth.map-room
+		{ 
+			.container {
+				width: auto;
+			} 
+		}
+}
