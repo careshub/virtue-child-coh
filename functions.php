@@ -14,10 +14,9 @@ function virtue_child_arc_scripts() {
 	// Include the needed js file.
 	wp_enqueue_script( 'virtue-child-coh-base-scripts', get_theme_file_uri( '/js/public.js' ), array( 'jquery' ), '1.0.1', true );
 
-	// Dequeue the Virtue theme "plugins" script on the reports page
+	// Dequeue the Virtue version of Bootstrap on the reports page
 	if ( is_page( array( 'assessment' ) ) ) {
-		wp_dequeue_script( 'virtue_plugins' );
-		wp_enqueue_script( 'virtue-plugins-alt', get_theme_file_uri( '/js/virtue-alt-plugins.js' ), array( 'jquery' ), '1.0.1', true );
+		wp_dequeue_script( 'bootstrap' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'virtue_child_arc_scripts', 999 );
