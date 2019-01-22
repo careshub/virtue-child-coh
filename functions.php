@@ -88,3 +88,40 @@ function virtue_child_coh_docs_title( $title ) {
 	return $title;
 }
 add_filter( 'virtue_title', 'virtue_child_coh_docs_title' );
+
+/**
+ * Add a taxonomy to use with BP Docs to organize docs in the global library.
+ *
+ * @since 1.0.1
+ */
+function virtue_child_coh_create_resource_cat_tax() {
+	$labels = array(
+		'name'              => _x( 'Resource Categories', 'taxonomy general name', 'virtue-child-coh' ),
+		'singular_name'     => _x( 'Resource Category', 'taxonomy singular name', 'virtue-child-coh' ),
+		'search_items'      => __( 'Search Resource Categories', 'virtue-child-coh' ),
+		'all_items'         => __( 'All Resource Categories', 'virtue-child-coh' ),
+		'parent_item'       => __( 'Parent Resource Category', 'virtue-child-coh' ),
+		'parent_item_colon' => __( 'Parent Resource Category:', 'virtue-child-coh' ),
+		'edit_item'         => __( 'Edit Resource Category', 'virtue-child-coh' ),
+		'update_item'       => __( 'Update Resource Category', 'virtue-child-coh' ),
+		'add_new_item'      => __( 'Add New Resource Category', 'virtue-child-coh' ),
+		'new_item_name'     => __( 'New Resource Category Name', 'virtue-child-coh' ),
+		'menu_name'         => __( 'Resource Category', 'virtue-child-coh' ),
+	);
+	$args = array(
+		'labels' => $labels,
+		'description' => __( 'Use organize BP Docs in the global library', 'virtue-child-coh' ),
+		'hierarchical' => true,
+		'public' => true,
+		'publicly_queryable' => true,
+		'show_ui' => true,
+		'show_in_menu' => true,
+		'show_in_nav_menus' => false,
+		'show_tagcloud' => false,
+		'show_in_quick_edit' => true,
+		'show_admin_column' => true,
+		'show_in_rest' => true,
+	);
+	register_taxonomy( 'resource_category', array('bp_doc'), $args );
+}
+add_action( 'init', 'virtue_child_coh_create_resource_cat_tax' );
