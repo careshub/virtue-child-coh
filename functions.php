@@ -10,7 +10,7 @@ add_filter( 'body_class', function( $classes ) {
  *
  * @since 1.0.1
  */
-function virtue_child_arc_scripts() {
+function virtue_child_coh_scripts() {
 	// Include the needed js file.
 	wp_enqueue_script( 'virtue-child-coh-base-scripts', get_theme_file_uri( '/js/public.js' ), array( 'jquery' ), '1.0.1', true );
 
@@ -19,7 +19,7 @@ function virtue_child_arc_scripts() {
 		wp_dequeue_script( 'bootstrap' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'virtue_child_arc_scripts', 999 );
+add_action( 'wp_enqueue_scripts', 'virtue_child_coh_scripts', 999 );
 
 /**
  * Add a sidebar that spans the width of the footer area.
@@ -44,7 +44,7 @@ add_action( 'widgets_init', 'coh_register_sidebars', 99 );
  * @since 1.0.1
  *
  */
-function cares_hestia_child_add_google_tag_manager_noscript_tag() {
+function virtue_child_coh_add_google_tag_manager_noscript_tag() {
 	// CARES Network Sites container ID: GTM-PQGZB4S
 	?>
 	<!-- Google Tag Manager (noscript) -->
@@ -53,7 +53,7 @@ function cares_hestia_child_add_google_tag_manager_noscript_tag() {
 	<!-- End Google Tag Manager (noscript) -->
 	<?php
 }
-add_action( 'virtue_after_body', 'cares_hestia_child_add_google_tag_manager_noscript_tag' );
+add_action( 'virtue_after_body', 'virtue_child_coh_add_google_tag_manager_noscript_tag' );
 
 /**
  * Add the Google Tag Manager script call.
@@ -61,7 +61,7 @@ add_action( 'virtue_after_body', 'cares_hestia_child_add_google_tag_manager_nosc
  * @since 1.0.1
  *
  */
-function cares_hestia_child_add_google_tag_manager_script() {
+function virtue_child_coh_add_google_tag_manager_script() {
 	// CARES Network Sites container ID: GTM-PQGZB4S
 	?>
 	<!-- Google Tag Manager -->
@@ -73,7 +73,7 @@ function cares_hestia_child_add_google_tag_manager_script() {
 	<!-- End Google Tag Manager -->
 	<?php
 }
-add_action( 'wp_head', 'cares_hestia_child_add_google_tag_manager_script' );
+add_action( 'wp_head', 'virtue_child_coh_add_google_tag_manager_script' );
 
 /**
  * Use the directory title setting for the Docs archive.
