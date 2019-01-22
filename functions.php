@@ -74,3 +74,17 @@ function cares_hestia_child_add_google_tag_manager_script() {
 	<?php
 }
 add_action( 'wp_head', 'cares_hestia_child_add_google_tag_manager_script' );
+
+/**
+ * Use the directory title setting for the Docs archive.
+ * Virtue has its own title function that ignores the setting.
+ *
+ * @since 1.0.1
+ */
+function virtue_child_coh_docs_title( $title ) {
+	if ( is_archive( 'bp_doc' ) ) {
+		$title = bp_docs_get_docs_directory_title();
+	}
+	return $title;
+}
+add_filter( 'virtue_title', 'virtue_child_coh_docs_title' );
